@@ -1,0 +1,57 @@
+<html ng-app="clock">
+    <head>
+        <script src="angular.min.js">
+
+            </script>
+        </head>
+        <body>
+
+        <div ng-controller="controller">
+            <h1>
+                clock app
+                
+                 </h1>
+                 
+                     <button ng-click="update()">
+                         show time
+                     </button>
+                     
+            
+                 <p ng-bind="timestring">
+                     </p>
+                     enter the user name:      <input ng-model="username" type="text" >
+                    
+                    </input>
+
+
+                    <p >user name is:{{username}}
+                        </p>
+                     </div>
+                     <script>
+                         var a=angular.module("clock",[]);
+
+a.controller("controller",main);
+function main($scope)
+{
+//$scope.hour=9;
+var date=new Date();
+$scope.timestring=date.toTimeString();
+
+console.log("main function called");
+$scope.update=function()
+
+   {
+        $scope.username="";
+
+       var date=new Date();
+$scope.timestring=date.toTimeString();
+
+
+}
+
+}
+                         </script>
+            </body>
+
+    
+</html>
